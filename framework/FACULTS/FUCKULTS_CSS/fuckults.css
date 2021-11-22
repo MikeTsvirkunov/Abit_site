@@ -18,7 +18,7 @@ body{background: #436094;}
 .pop{
     margin-top: 3%;
     width: 96%;
-    height: 60vh;
+    height: 250vh;
     background: #F8CD96;
     float: left;
     border-radius: 2vw;
@@ -83,8 +83,8 @@ body{background: #436094;}
     background: #333333;
     text-align: center;
     padding: 0.8%;
-    width: 18vw;
-    height: 45vh;
+    width: 95%;
+    height: 40vh;
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 2vw;
     text-decoration: none;
