@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="test_com.css">
+        <title>Site</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        </style>
+    </head>
+    <body>
+        <div id="HEADER_BOX" style="border-color: #222222; border-style: solid; border-bottom-width: 1vh; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);">
+            <div id="home_btn">
+                <a href="..\main_page.html" style="text-decoration: none; color: #F8CD96;">
+                    <img src="..\IMG\logo_color_80-removebg-preview.png" align="left" height="150px" style="text-align: center;">
+                    Прозрачность <br> абитуриента
+                </a>
+            </div>
+
+            <div id="left_header">
+                <div>
+                    <p style="float: right; color: #F8CD96; font-size: 375%; font-family: 'Russo One', sans-serif;" >Помощь абитуриенту</p>
+                </div>
+
+                <div id="find_block" style="background-color: #222222; width: 95%;">
+                    <input id="f_line" type="Поиск..." name="" value="">
+                    <button id="f_btn" type="button" name="button">Найти.</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="MENU_LINE">
+            <a class="menu_btn" href="test_com2.html">
+                Тест.
+            </a>
+
+            <a class="menu_btn" href="..\FUCKULTS\fuckults_page.html">
+                Направления.
+            </a>
+
+            <div class="menu_btn">
+                Как поступать?
+            </div>
+        </div>
+
+        <div id="Pop">
+            <div class="Header_of_PB">
+                <p id="head_pop_block">
+                    Тест
+                </p>
+            </div>
+            <div id="question_1">
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 120%; color: #333333; padding-left: 1%; padding-bottom: 1%;">Какая область вам интересна?</p>
+                <button type="button" value="1" class="c_btn">Физика</button><br>
+                <button type="button" value="2" class="c_btn">Информатика</button><br>
+                <button type="button" value="3" class="c_btn">Электроника</button><br>
+                <button type="button" value="4"class="c_btn">Химия и биология</button><br>
+                <button type="button" value="5" class="c_btn">Экономика</button><br>
+                <button type="button" value="6" class="c_btn">Обществознание и право</button><br>
+                <button type="button" value="7" class="c_btn">Исскуство/дизайн</button>
+            </div>
+            <div id="question_2">
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 120%; color: #333333; padding-left: 1%; padding-bottom: 1%;">Что у вас лучше получается?</p>
+                <button type="button" value="1" class="c_btn">Придумывать что-то и красиво рисовать</button><br>
+                <button type="button" value="2" class="c_btn">Програмировать</button><br>
+                <button type="button" value="3" class="c_btn">Копаться в электронике и электросхемах</button><br>
+                <button type="button" value="4" class="c_btn">Планировать расходы</button><br>
+                <button type="button" value="5" class="c_btn">Вести расчёты</button><br>
+                <button type="button" value="6" class="c_btn">Разбраться в законодательстве и решать конфликтные ситуации</button>
+            </div>
+
+            <script>
+
+                var button = document.querySelectorAll('#question_1 [type="button"]');
+                var button2 = document.querySelectorAll('#question_2 [type="button"]');
+
+                let m1 = 0;
+                let m2 = 0;
+
+                document.getElementById('question_2').hidden = true;
+
+                for (let i = 0; i < button.length; i++) {
+                    button[i].addEventListener('click', raz, false);
+                    button2[i].addEventListener('click', raz2, false);
+                }
+
+                function raz() {
+                    m1 = this.value;
+                    // accept();
+                    document.getElementById('question_1').hidden = true;
+                    document.getElementById('question_2').hidden = false;
+                }
+
+                function raz2() {
+                    m2 = this.value;
+                    accept();
+                }
+
+                function roj(name){
+                    //question_2.after();
+                    let div = document.createElement('div');
+                    div.className = "alert";
+                    div.innerHTML = "<b>Вам подходит: </b>" + name;
+                    document.getElementById('question_2').hidden = true;
+                    Pop.append(div);
+                }
+
+                function anal(){
+                    switch (m1) {
+                        case "1":
+                            roj("Факультет транспорта, нефти и газа (ФТНГ) бывший Аэрокосмический");
+                            break;
+                        case "2":
+                            roj("Факультет информационных технологий и компьютерных систем (ФИТиКС) бывший Факультет Автоматизации");
+                            break;
+                        case "3":
+                            roj("Радиотехнический факультет (РТФ)");
+                            break;
+                        case "4":
+                            roj("Художественно-технологический факультет (ХТФ)");
+                            break;
+                        case "5":
+                            roj("Факультет экономики, сервиса и управления (ФЭСиУ)");
+                            break;
+                        case "6":
+                            roj("Факультет транспорта, нефти и газа (ФТНГ) бывший Аэрокосмический");
+                            break;
+                        case "7":
+                            roj("Факультет экономики, сервиса и управления (ФЭСиУ)");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                function accept(){
+                    if (m1 != "0" && m2 != "0"){anal();}
+                }
+
+            </script>
+        </div>
+
+        <div id="info_head" align="center">
+            <p>Кто мы есть.</p>
+            <p>Как с нами связаться.</p>
+        </div>
+    </body>
+</html>
