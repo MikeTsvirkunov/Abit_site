@@ -1,0 +1,89 @@
+<style>
+input[type="text"]{
+}
+.alert {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+</style>
+
+<div id="question_1">
+    <p>Какая область вам интересна?</p>
+    <button type="button" value="1">Физика</button><br>
+    <button type="button" value="2">Информатика</button><br>
+    <button type="button" value="3">Электроника</button><br>
+    <button type="button" value="4">Химия и биология</button><br>
+    <button type="button" value="5">Экономика</button><br>
+    <button type="button" value="6">Обществознание и право</button><br>
+    <button type="button" value="7">Исскуство/дизайн</button>
+</div>
+
+<div id="question_2">
+    <p>Что у вас лучше получается?</p>
+    <button type="button" value="1">Придумывать что-то и красиво рисовать</button><br>
+    <button type="button" value="2">Програмировать</button><br>
+    <button type="button" value="3">Копаться в электронике и электросхемах</button><br>
+    <button type="button" value="4">Планировать расходы</button><br>
+    <button type="button" value="5">Вести расчёты</button><br>
+    <button type="button" value="6">Разбраться в законодательстве и решать конфликтные ситуации</button>
+</div>
+
+<script>
+    var button = document.querySelectorAll('#question_1 [type="button"]');
+    var button2 = document.querySelectorAll('#question_2 [type="button"]');
+    let m1 = 0;
+    let m2 = 0;
+
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener('click', raz, false);
+        button2[i].addEventListener('click', raz2, false);
+    }
+    function raz() {m1 = this.value; accept();}
+
+    function raz2() {m2 = this.value; accept();}
+
+    function roj(name){
+        let div = document.createElement('div');
+        div.className = "alert";
+        div.innerHTML = name;
+        document.body.append(div);
+        setTimeout(() => div.remove(), 1000);
+    }
+
+    function anal(){
+        switch (m1) {
+            case "1":
+                roj("Факультет транспорта, нефти и газа (ФТНГ) бывший Аэрокосмический");
+                break;
+            case "2":
+                roj("Факультет информационных технологий и компьютерных систем (ФИТиКС) бывший Факультет Автоматизации");
+                break;
+            case "3":
+                roj("Радиотехнический факультет (РТФ)");
+                break;
+            case "4":
+                roj("Художественно-технологический факультет (ХТФ)");
+                break;
+            case "5":
+                roj("Факультет экономики, сервиса и управления (ФЭСиУ)");
+                break;
+            case "6":
+                roj("Факультет транспорта, нефти и газа (ФТНГ) бывший Аэрокосмический");
+                break;
+            case "7":
+                roj("Факультет экономики, сервиса и управления (ФЭСиУ)");
+                break;
+            default:
+                break;
+        }
+    }
+    function accept(){
+        if (m1 != "0" && m2 != "0"){anal();}
+    }
+
+
+
+</script>
