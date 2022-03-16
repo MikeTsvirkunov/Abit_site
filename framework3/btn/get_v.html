@@ -1,0 +1,41 @@
+<style>
+input[type="text"] {
+width: 30px;
+}
+</style>
+
+<div id="bloggood_ru">
+<input type="text"/>
+<input type="text2"/>
+<br><br>
+<input type="button" value="1"/>
+<input type="button" value="2"/>
+<input type="button" value="3"/>
+<br>
+<input type="button" value="4"/>
+<input type="button" value="5"/>
+<input type="button" value="6"/>
+<br>
+<input type="button" value="7"/>
+<input type="button" value="8"/>
+<input type="button" value="9"/>
+<br>
+<input type="button" value="sos"/>
+<input type="button" value="0"/>
+</div>
+
+<script>
+    var button = document.querySelectorAll('#bloggood_ru [type="button"]');
+    for (var i = 0; i < button.length-2; i++) {
+        button[i].addEventListener('click', raz, false);
+    }
+    for (var i = button.length-2; i < button.length; i++) {
+        button[i].addEventListener('click', raz2, false);
+    }
+    function raz() {
+        document.querySelector('#bloggood_ru [type="text"]').value = this.value;
+    }
+    function raz2() {
+        document.querySelector('#bloggood_ru [type="text2"]').value = this.value;
+    }
+</script>
